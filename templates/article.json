@@ -15,12 +15,26 @@
         "article_title_block_jfJzq9": {
           "type": "article_title_block",
           "settings": {
-            "article_title": "Hello"
+            "article_title": "Hello golden"
+          }
+        },
+        "article_image_block_3L6wJF": {
+          "type": "article_image_block",
+          "settings": {
+            "article_image": "shopify://shop_images/rumour-leaker-names-multiple-xbox-games-potentially-releasing-on-switch-2.webp"
+          }
+        },
+        "pub_date_block_VLtKEU": {
+          "type": "pub_date_block",
+          "settings": {
+            "publishe_date": "生生世世"
           }
         }
       },
       "block_order": [
-        "article_title_block_jfJzq9"
+        "article_title_block_jfJzq9",
+        "article_image_block_3L6wJF",
+        "pub_date_block_VLtKEU"
       ],
       "settings": {
         "enabled_author": true,
