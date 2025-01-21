@@ -1,0 +1,12 @@
+{
+   
+    "layout": "404_page",
+    "sections": {
+      "404_page": {
+        "type": "example_404"
+      }
+    },
+    "order": [
+      "404_page"
+    ]
+  }

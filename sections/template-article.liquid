@@ -1,0 +1,110 @@
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when 'article_title_block' %}
+        
+            <h1>{{block.settings.article_title| default:article.title}}</h1> 
+        {% when 'author_name_block' %}
+            {% if section.settings.enabled_author %}
+                <small>{{block.settings.author_name}}</small>
+            {% endif %}
+        {% when 'pub_date_block' %}
+                {% if section.settings.enabled_published_date %}
+                    <time datetime="{{article.published_at |  date:'%Y-%m-%d'}}">{{article.published_at |  date:'%Y-%m-%d'}}</time>
+                {% endif %}
+        {% when 'article_image_block' %}
+            <img src="{{article.image |  img_url: 'large' }}" alt="{{article.image.alt}}">
+        {% when 'article_richtext_block' %}
+            <div>{{article.content}}</div>
+            
+            
+    {% endcase %}
+{% endfor %}
+
+
+
+
+
+{% schema %}
+{
+    "name": "Template Article",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "enabled_author",
+            "label": "Display Author Name",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enabled_published_date",
+            "label": "Display Published Date",
+            "default": true
+        }
+        ],"blocks": [
+            {
+                "type":"article_title_block",
+                "name":"Article Title",
+                "limit":1,
+                "settings":
+                [
+                    {
+                        "type":"text",
+                        "id":"article_title",
+                        
+                        "label":"Article Title"
+                    }
+                ]
+            },
+            {
+                "type":"author_name_block",
+                "name":"Auhtor Name",
+                "limit":1,
+                "settings":
+                [
+                    {
+                        "type":"text",
+                        "id":"author_name",
+                        "label":"Author Name"
+                    }
+                ]
+            },
+            {
+                "type":"pub_date_block",
+                "name":"Article Published Date",
+                "limit":1,
+                "settings":
+                [
+                    {
+                        "type":"text",
+                        "id":"publishe_date",
+                        "label":"Article Published Date"
+                    }
+                ]
+            },
+        {
+            "type": "article_image_block",
+            "name": "Article Image",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "article_image",
+                    "label": "Article Image"
+                }
+            ]
+        },
+        
+        {
+            "type": "article_richtext_block",
+            "name": "Article Content",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "article_content",
+                    "label": "Article Content"
+                }
+            ]
+        }
+        ]
+}
+{% endschema %}
