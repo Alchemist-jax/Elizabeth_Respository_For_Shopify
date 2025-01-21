@@ -11,7 +11,21 @@
   "sections": {
     "article": {
       "type": "template-article",
-      "settings": {}
+      "blocks": {
+        "article_title_block_jfJzq9": {
+          "type": "article_title_block",
+          "settings": {
+            "article_title": "Hello"
+          }
+        }
+      },
+      "block_order": [
+        "article_title_block_jfJzq9"
+      ],
+      "settings": {
+        "enabled_author": true,
+        "enabled_published_date": true
+      }
     }
   },
   "order": [
